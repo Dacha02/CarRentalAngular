@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "manufacturerName": "Mercedes Benz"
+  },
+  {
+    "id": 2,
+    "manufacturerName": "BMW"
+  },
+  {
+    "id": 3,
+    "manufacturerName": "Audi"
+  },
+  {
+    "id": 4,
+    "manufacturerName": "Volkswagen"
+  }
+]

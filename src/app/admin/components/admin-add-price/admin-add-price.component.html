@@ -1,0 +1,37 @@
+<div class="d-flex align-items-center justify-content-center">
+    <form class="col-md-6 request-form bg-primary" [formGroup]="addPriceForm" (ngSubmit)="submitForm()">
+        <h2>Make your trip</h2>
+        <div class="form-group">
+            <label for="pricePerDay" class="label">Price per day</label>
+            <input type="text" class="form-control" id="pricePerDay" formControlName="pricePerDay" required>
+            <div *ngIf="addPriceForm.get('pricePerDay')?.invalid && (addPriceForm.get('pricePerDay')?.dirty || addPriceForm.get('pricePerDay')?.touched)">
+                <div id="pricePerDayError" class="text-danger">Price per day is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="pricePerMonth" class="label">Price per month</label>
+            <input type="text" class="form-control" id="pricePerMonth" formControlName="pricePerMonth" required>
+            <div *ngIf="addPriceForm.get('pricePerMonth')?.invalid && (addPriceForm.get('pricePerMonth')?.dirty || addPriceForm.get('pricePerMonth')?.touched)">
+                <div id="pricePerMonthError" class="text-danger">Price per month is required</div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="selectedCar" class="label">Select a car</label>
+            <select  class="form-control" id="selectedCar" formControlName="selectedCar">
+                <option value="" disabled selected>Select a car</option>
+                <option class="text-dark" *ngFor="let car of cars.data" [value]="car.carId">{{ car.manufacturer }}</option>
+            </select>
+            <div *ngIf="addPriceForm.get('selectedCar')?.invalid && (addPriceForm.get('selectedCar')?.dirty || addPriceForm.get('selectedCar')?.touched)">
+                <div class="text-danger">Please select a car.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" [disabled]="!addPriceForm.valid" class="btn btn-secondary py-3 px-4">Submit</button>
+            <div id="formSubmitException" class="text-white text-center font-weight-bold"></div>
+        </div>
+    </form>
+</div>

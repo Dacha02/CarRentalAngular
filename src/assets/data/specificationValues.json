@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "value": "5"
+  },
+  {
+    "id": 2,
+    "value": "4"
+  },
+  {
+    "id": 3,
+    "value": "2"
+  },
+  {
+    "id": 4,
+    "value": "manual"
+  },
+  {
+    "id": 5,
+    "value": "automatic"
+  },
+  {
+    "id": 6,
+    "value": "Diesel"
+  },
+  {
+    "id": 7,
+    "value": "Petrol"
+  },
+  {
+    "id": 8,
+    "value": "30,000"
+  },
+  {
+    "id": 9,
+    "value": "50,000"
+  },
+  {
+    "id": 10,
+    "value": "80,000"
+  },
+  {
+    "id": 11,
+    "value": "10,000"
+  }
+]

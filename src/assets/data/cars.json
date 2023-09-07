@@ -1,0 +1,781 @@
+[
+  {
+    "id": 1,
+    "modelId": 1,
+    "price": {
+      "pricePerDay": 15,
+      "pricePerMonth": 150
+    },
+    "categoryId": 1,
+    "carSpecifications": [
+      1,
+      4,
+      6,
+      9,
+      13
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 2,
+    "modelId": 2,
+    "price": {
+      "pricePerDay": 10,
+      "pricePerMonth": 200
+    },
+    "categoryId": 2,
+    "carSpecifications": [
+      2,
+      3,
+      7,
+      10,
+      14
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 3,
+    "modelId": 3,
+    "price": {
+      "pricePerDay": 25,
+      "pricePerMonth": 300
+    },
+    "categoryId": 1,
+    "carSpecifications": [
+      1,
+      3,
+      7,
+      11,
+      13
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 4,
+    "modelId": 4,
+    "price": {
+      "pricePerDay": 25,
+      "pricePerMonth": 300
+    },
+    "categoryId": 3,
+    "carSpecifications": [
+      3,
+      5,
+      8,
+      13
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 5,
+    "modelId": 5,
+    "price": {
+      "pricePerDay": 35,
+      "pricePerMonth": 450
+    },
+    "categoryId": 3,
+    "carSpecifications": [
+      2,
+      3,
+      7,
+      8,
+      12
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 6,
+    "modelId": 6,
+    "price": {
+      "pricePerDay": 10,
+      "pricePerMonth": 200
+    },
+    "categoryId": 2,
+    "carSpecifications": [
+      3,
+      4,
+      7,
+      10,
+      14
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 7,
+    "modelId": 7,
+    "price": {
+      "pricePerDay": 23,
+      "pricePerMonth": 300
+    },
+    "categoryId": 1,
+    "carSpecifications": [
+      2,
+      3,
+      7,
+      8,
+      12
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 8,
+    "modelId": 8,
+    "price": {
+      "pricePerDay": 33,
+      "pricePerMonth": 430
+    },
+    "categoryId": 3,
+    "carSpecifications": [
+      2,
+      3,
+      7,
+      8,
+      12
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 9,
+    "modelId": 9,
+    "price": {
+      "pricePerDay": 15,
+      "pricePerMonth": 250
+    },
+    "categoryId": 3,
+    "carSpecifications": [
+      2,
+      3,
+      7,
+      8,
+      12
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 10,
+    "modelId": 10,
+    "price": {
+      "pricePerDay": 30,
+      "pricePerMonth": 300
+    },
+    "categoryId": 1,
+    "carSpecifications": [
+      2,
+      3,
+      7,
+      8,
+      12
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 11,
+    "modelId": 11,
+    "price": {
+      "pricePerDay": 30,
+      "pricePerMonth": 400
+    },
+    "categoryId": 1,
+    "carSpecifications": [
+      2,
+      3,
+      7,
+      8,
+      12
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 12,
+    "modelId": 12,
+    "price": {
+      "pricePerDay": 50,
+      "pricePerMonth": 500
+    },
+    "categoryId": 2,
+    "carSpecifications": [
+      2,
+      3,
+      7,
+      8,
+      12
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 13,
+    "modelId": 13,
+    "price": {
+      "pricePerDay": 40,
+      "pricePerMonth": 400
+    },
+    "categoryId": 3,
+    "carSpecifications": [
+      2,
+      3,
+      7,
+      8,
+      12
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 14,
+    "modelId": 14,
+    "price": {
+      "pricePerDay": 50,
+      "pricePerMonth": 600
+    },
+    "categoryId": 3,
+    "carSpecifications": [
+      2,
+      3,
+      7,
+      8,
+      12
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  },
+  {
+    "id": 15,
+    "modelId": 15,
+    "price": {
+      "pricePerDay": 100,
+      "pricePerMonth": 1000
+    },
+    "categoryId": 1,
+    "carSpecifications": [
+      2,
+      3,
+      7,
+      8,
+      12
+    ],
+    "additionalEquipment": [
+      {
+        "id": 1,
+        "name": "Aircondition"
+      },
+      {
+        "id": 2,
+        "name": "Chiild seat"
+      },
+      {
+        "id": 3,
+        "name": "GPS"
+      },
+      {
+        "id": 4,
+        "name": "Radio"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth"
+      },
+      {
+        "id": 6,
+        "name": "Audio input"
+      },
+      {
+        "id": 7,
+        "name": "Climate control"
+      },
+      {
+        "id": 8,
+        "name": "Remote central locking"
+      }
+    ],
+    "image": "assets/templateImages/bg_1.jpg",
+    "description": "Mercedes-Benz Group AG (Mercedes-Benz), formerly Daimler AG, is an automobile company. It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services. The company strives to develop efficient powertrains and go all-electric in an emissions-free and software-driven environment. It has production facilities in Europe, North and Latin America, Asia and Africa. The company sells its vehicles and provides services in almost every country on all continents. Mercedes-Benz is headquartered in Stuttgart, Baden-Wurttemberg, Germany."
+  }
+]

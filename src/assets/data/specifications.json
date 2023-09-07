@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Seats",
+    "icon": "flaticon-car-seat"
+  },
+  {
+    "id": 2,
+    "name": "Fuel",
+    "icon": "flaticon-diesel"
+  },
+  {
+    "id": 3,
+    "name": "Transmission",
+    "icon": "flaticon-pistons"
+  },
+  {
+    "id": 4,
+    "name": "Mileage",
+    "icon": "flaticon-dashboard"
+  },
+  {
+    "id": 5,
+    "name": "Luggage",
+    "icon": "flaticon-backpack"
+  }
+]

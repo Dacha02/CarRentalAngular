@@ -1,0 +1,15 @@
+form {
+    width: 100%;
+}
+
+.deleted-car {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.deleted-message {
+    font-size: 14px;
+    color: red;
+    margin-top: 10px;
+}

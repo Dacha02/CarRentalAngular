@@ -1,0 +1,67 @@
+<div class="container-fluid" id="adminHomeContainer">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Rentings</h1>
+    </div>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold">Users</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Car</th>
+                        <th>Start of rent</th>
+                        <th>End of rent</th>
+                        <th>Sum</th>
+                        <th>Rent address</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>Username</th>
+                        <th>Car</th>
+                        <th>Start of rent</th>
+                        <th>End of rent</th>
+                        <th>Sum</th>
+                        <th>Rent address</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    <ng-container *ngFor="let rent of rentingsPaginationData.data.data">
+                        <tr [ngClass]="{'paid-row': rent.isPaid, 'unpaid-row': !rent.isPaid}">
+                            <th>{{ rent.username }} </th>
+                            <th>{{ rent.manufacturer }} {{ rent.model }}</th>
+                            <th>{{ rent.startOfRent }}</th>
+                            <th>{{ rent.endOfRent }}</th>
+                            <th>{{ rent.sumCost }}</th>
+                            <th>{{ rent.rentAddress }}</th>
+                        </tr>
+                    </ng-container>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <div class="block-27">
+                        <ul>
+                            <li><a href="javascript:void(0);" (click)="previousRentingsPage()">&lt;</a></li>
+                            <ng-container *ngFor="let numberOfPage of rentingsPaginationData.pagesCount">
+                                <li>
+                                    <a href="javascript:void(0);"
+                                       (click)="goToRentingsPage(numberOfPage)">{{numberOfPage}}</a>
+                                </li>
+                            </ng-container>
+                            <li><a href="javascript:void(0);" (click)="nextRentingsPage()">&gt;</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

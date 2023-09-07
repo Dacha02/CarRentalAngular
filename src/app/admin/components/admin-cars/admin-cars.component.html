@@ -1,0 +1,106 @@
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row">
+            <form class="request-form bg-primary" [formGroup]="filterForm" (ngSubmit)="submitForm()">
+                <h2>Find your perfect car</h2>
+                <div class="form-group d-flex flex-row justify-content-between">
+                    <div class=" w-50">
+                        <label for="keyword" class="label">Search for a car</label>
+                        <input type="text" class="form-control" id="keyword" formControlName="keyword"
+                               [(ngModel)]="keyword">
+                        <div *ngIf="filterForm.get('keyword')?.invalid && (filterForm.get('keyword')?.dirty || filterForm.get('keyword')?.touched)">
+                            <div id="keywordError" class="text-danger">Pick-up location is required.</div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="perPage" class="label">Per page</label>
+                        <select class="form-control" id="perPage" formControlName="perPage" value="15">
+                            <option class="text-dark" value="15" selected> 15</option>
+                            <option class="text-dark" value="20"> 20</option>
+                            <option class="text-dark" value="25"> 25</option>
+                        </select>
+                        <div *ngIf="filterForm.get('perPage')?.invalid && (filterForm.get('perPage')?.dirty || filterForm.get('perPage')?.touched)">
+                            <div id="perPageError" class="text-danger">Per page error</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" [disabled]="!filterForm.valid" class="btn btn-secondary py-3 px-4">Search
+                    </button>
+                    <div id="formSubmitException" class="text-danger text-center font-weight-bold"></div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<!--<app-car-card class="col-md-4" [carImage]="car.ImagePath" [carModel]="car.model"-->
+<!--              [carManufacturer]="car.manufacturer"-->
+<!--              [pricePerDay]="car.pricePerDay" [carCategory]="car.carCategory"-->
+<!--              [carId]="car.carId"></app-car-card>-->
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row">
+            <ng-container *ngFor="let car of cars.data">
+                <div class="car-wrap col-md-4 rounded" [ngClass]="{ 'deleted-car': car.deletedAt }">
+                    <div class="img rounded d-flex align-items-end"
+                         [style.background-image]="'url(assets/templateImages/car-1.jpg)'">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0" *ngIf="!car.deletedAt">
+                            <a routerLink="/admin/change-car/{{car.carId}}">{{car.model}}</a>
+                        </h2>
+                        <h2 class="mb-0" *ngIf="car.deletedAt">{{car.model}}</h2>
+                        <div class="d-flex flex-column mb-3">
+                            <span class="">{{car.carCategory}}</span>
+                            <span class="cat">{{car.manufacturer}}</span>
+                            <p class="price ml-auto">{{car.pricePerDay | price}}  <span>/day</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block">
+                            <a routerLink="/admin/change-car/{{car.carId}}" class="btn btn-warning text-white py-2 mr-1" *ngIf="!car.deletedAt">Change</a>
+                            <button type="button" class="btn btn-danger w-50" *ngIf="!car.deletedAt" (click)="showDeactivateConfirmationModal(car)">Deactivate</button>
+                        </p>
+                        <p class="deleted-message" *ngIf="car.deletedAt">This car has been deleted</p>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <div class="row mt-5">
+            <div class="col text-center">
+                <div class="block-27">
+                    <ul>
+                        <li><a href="javascript:void(0);" (click)="previousPage()">&lt;</a></li>
+                        <ng-container *ngFor="let numberOfPage of pagesCount">
+                            <li><a href="javascript:void(0);" (click)="goToPage(numberOfPage)">{{numberOfPage}}</a></li>
+                        </ng-container>
+                        <li><a href="javascript:void(0);" (click)="nextPage()">&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Deactivate Confirmation Modal -->
+<div id="deactivateConfirmationModal" class="modal" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmation</h5>
+                <button type="button" class="close" (click)="hideConfirmationModal()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to deactivate this car?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="hideConfirmationModal()" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" (click)="confirmDeactivate()">Deactivate</button>
+            </div>
+        </div>
+    </div>
+</div>

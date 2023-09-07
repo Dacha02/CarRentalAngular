@@ -1,0 +1,72 @@
+<div class="hero-wrap" style="background-image: url('assets/templateImages/bg_1.jpg');"
+     data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
+            <div class="col-lg-8 ftco-animate">
+                <div class="d-flex justify-content-center">
+                    <form class="request-form ftco-animate bg-primary w-75" [formGroup]="updateUserForm" (ngSubmit)="submitForm()" enctype="multipart/form-data">
+                        <h2>Update your inforamtions</h2>
+                        <div class="form-group">
+                            <label for="firstName" class="label">First name</label>
+                            <input type="text" class="form-control" id="firstName" formControlName="firstName" [(ngModel)]="firstName" required>
+                            <div *ngIf="updateUserForm.get('firstName')?.invalid && (updateUserForm.get('firstName')?.dirty || updateUserForm.get('firstName')?.touched)">
+                                <div *ngIf="updateUserForm.get('firstName')?.errors?.['required']" class="text-danger">Email is required.</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName" class="label">Last name</label>
+                            <input type="text" class="form-control" id="lastName" formControlName="lastName" [(ngModel)]="lastName" required>
+                            <div *ngIf="updateUserForm.get('lastName')?.invalid && (updateUserForm.get('lastName')?.dirty || updateUserForm.get('lastName')?.touched)">
+                                <div *ngIf="updateUserForm.get('lastName')?.errors?.['required']" class="text-danger">Last name is required.</div>
+                                <div *ngIf="updateUserForm.get('lastName')?.errors?.['pattern']" class="text-danger">Last name is not in the correct format.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userName" class="label">User name</label>
+                            <input type="text" class="form-control" id="userName" formControlName="userName" [(ngModel)]="userName" required>
+                            <div *ngIf="updateUserForm.get('userName')?.invalid && (updateUserForm.get('userName')?.dirty || updateUserForm.get('userName')?.touched)">
+                                <div *ngIf="updateUserForm.get('userName')?.errors?.['required']" class="text-danger">User name is required.</div>
+                                <div *ngIf="updateUserForm.get('userName')?.errors?.['pattern']" class="text-danger">User name is not in the correct format.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address" class="label">Address</label>
+                            <input type="text" class="form-control" id="address" formControlName="address" [(ngModel)]="userAddress" required>
+                            <div *ngIf="updateUserForm.get('address')?.invalid && (updateUserForm.get('address')?.dirty || updateUserForm.get('address')?.touched)">
+                                <div *ngIf="updateUserForm.get('address')?.errors?.['required']" class="text-danger">Address is required.</div>
+                                <div *ngIf="updateUserForm.get('address')?.errors?.['pattern']" class="text-danger">Address is not in the correct format.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="label">Phone</label>
+                            <input type="text" class="form-control" id="phone" formControlName="phone" [(ngModel)]="userPhone" required>
+                            <div *ngIf="updateUserForm.get('phone')?.invalid && (updateUserForm.get('phone')?.dirty || updateUserForm.get('phone')?.touched)">
+                                <div *ngIf="updateUserForm.get('phone')?.errors?.['required']" class="text-danger">Phone is required.</div>
+                                <div *ngIf="updateUserForm.get('phone')?.errors?.['pattern']" class="text-danger">Phone is not in the correct format.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="image" class="label">Image</label>
+                            <input type="file" class="form-control" id="image" formControlName="image" required (change)="handleImageInput($event)">
+                            <div *ngIf="updateUserForm.get('image')?.invalid && (updateUserForm.get('image')?.dirty || updateUserForm.get('image')?.touched)">
+                                <div *ngIf="updateUserForm.get('image')?.errors?.['required']" class="text-danger">Image is required.</div>
+                                <div *ngIf="updateUserForm.get('image')?.errors?.['pattern']" class="text-danger">Image is not in the correct format.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" [disabled]="!updateUserForm.valid" class="btn btn-secondary py-3 px-4">Submit</button>
+                            <div id="formSubmitException" class="text-danger text-center font-weight-bold"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

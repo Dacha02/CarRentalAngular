@@ -1,0 +1,8 @@
+/* In your component's styles or a separate stylesheet */
+.paid-row {
+    background-color: lightgreen; /* Set the background color for paid rows */
+}
+
+.unpaid-row {
+    background-color: lightcoral; /* Set the background color for unpaid rows */
+}

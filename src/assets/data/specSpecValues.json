@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "specificationId": 1,
+    "specificationValueId": 1
+  },
+  {
+    "id": 2,
+    "specificationId": 1,
+    "specificationValueId": 2
+  },
+  {
+    "id": 3,
+    "specificationId": 1,
+    "specificationValueId": 3
+  },
+  {
+    "id": 4,
+    "specificationId": 2,
+    "specificationValueId": 6
+  },
+  {
+    "id": 5,
+    "specificationId": 2,
+    "specificationValueId": 7
+  },
+  {
+    "id": 6,
+    "specificationId": 3,
+    "specificationValueId": 4
+  },
+  {
+    "id": 7,
+    "specificationId": 3,
+    "specificationValueId": 5
+  },
+  {
+    "id": 8,
+    "specificationId": 4,
+    "specificationValueId": 8
+  },
+  {
+    "id": 9,
+    "specificationId": 4,
+    "specificationValueId": 9
+  },
+  {
+    "id": 10,
+    "specificationId": 4,
+    "specificationValueId": 10
+  },
+  {
+    "id": 11,
+    "specificationId": 4,
+    "specificationValueId": 11
+  },
+  {
+    "id": 12,
+    "specificationId": 5,
+    "specificationValueId": 1
+  },
+  {
+    "id": 13,
+    "specificationId": 5,
+    "specificationValueId": 2
+  },
+  {
+    "id": 14,
+    "specificationId": 5,
+    "specificationValueId": 3
+  }
+]

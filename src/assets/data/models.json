@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "modelName": "A3",
+    "manufacturerId": 3
+  },
+  {
+    "id": 2,
+    "modelName": "A4",
+    "manufacturerId": 3
+  },
+  {
+    "id": 3,
+    "modelName": "A6",
+    "manufacturerId": 3
+  },
+  {
+    "id": 4,
+    "modelName": "Q5",
+    "manufacturerId": 3
+  },
+  {
+    "id": 5,
+    "modelName": "Q7",
+    "manufacturerId": 3
+  },
+  {
+    "id": 6,
+    "modelName": "3 Series",
+    "manufacturerId": 2
+  },
+  {
+    "id": 7,
+    "modelName": "5 Series",
+    "manufacturerId": 2
+  },
+  {
+    "id": 8,
+    "modelName": "X3",
+    "manufacturerId": 2
+  },
+  {
+    "id": 9,
+    "modelName": "X5",
+    "manufacturerId": 2
+  },
+  {
+    "id": 10,
+    "modelName": "7 Series",
+    "manufacturerId": 2
+  },
+  {
+    "id": 11,
+    "modelName": "C-Class",
+    "manufacturerId": 1
+  },
+  {
+    "id": 12,
+    "modelName": "E-Class",
+    "manufacturerId": 1
+  },
+  {
+    "id": 13,
+    "modelName": "GLC",
+    "manufacturerId": 1
+  },
+  {
+    "id": 14,
+    "modelName": "GLE",
+    "manufacturerId": 1
+  },
+  {
+    "id": 15,
+    "modelName": "S-Class",
+    "manufacturerId": 1
+  }
+]
