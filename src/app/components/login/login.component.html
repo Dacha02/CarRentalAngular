@@ -12,22 +12,22 @@
                             <label for="email" class="label">E-mail</label>
                             <input type="text" class="form-control" id="email" formControlName="email" required>
                             <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
-                                <div *ngIf="loginForm.get('email')?.errors?.['required']" class="text-danger">Email is required.</div>
-                                <div *ngIf="loginForm.get('email')?.errors?.['email']" class="text-danger">Email is not in correct format.</div>
+                                <div *ngIf="loginForm.get('email')?.errors?.['required']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Email is required.</div>
+                                <div *ngIf="loginForm.get('email')?.errors?.['email']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Email is not in correct format.</div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="label">Password</label>
                             <input type="password" class="form-control" id="password" formControlName="password" required>
                             <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
-                                <div *ngIf="loginForm.get('password')?.errors?.['required']" class="text-danger">Password is required.</div>
-                                <div *ngIf="loginForm.get('password')?.errors?.['pattern']" class="text-danger">Password is not in the correct format.</div>
+                                <div *ngIf="loginForm.get('password')?.errors?.['required']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Password is required.</div>
+                                <div *ngIf="loginForm.get('password')?.errors?.['pattern']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Password is not in the correct format.</div>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <button type="submit" [disabled]="!loginForm.valid" class="btn btn-secondary py-3 px-4">Submit</button>
-                            <div id="formSubmitException" class="text-danger text-center font-weight-bold"></div>
+                            <div id="formSubmitException" class="text-danger font-weight-normal bg-white mt-1 pl-2 text-center"></div>
                         </div>
 
                         <div class="text-center">

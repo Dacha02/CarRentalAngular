@@ -26,6 +26,7 @@ export class CarsComponent implements AfterViewInit, OnInit {
   pagesCount: any[] = [];
   keyword: string = '';
   filterForm! :FormGroup;
+  imgUrls: any = [];
 
   ngOnInit(): void {
     this.titleService.setPageTitle('Cars')
@@ -46,6 +47,29 @@ export class CarsComponent implements AfterViewInit, OnInit {
         console.log(err);
       }
     });
+
+    const apiKey = 'y7ZJohrsKbAX7BfHG4AR3k5clFCknL3cBpz5764zrzsqbpfG6IzAgRVS';
+    const query = 'car'; // Your query for car images
+    const width = 200; // Desired width
+    const height = 200; // Desired height
+
+    fetch(`https://api.pexels.com/v1/search?query=${query}&width=${width}&height=${height}&per_page=30`, {
+      method: 'GET',
+      headers: {
+        'Authorization': apiKey
+      }
+    })
+        .then(response => response.json())
+        .then(data => {
+          // Handle the API response here, which contains the list of images
+          //console.log(data);
+          if (data.photos && data.photos.length > 0) {
+            this.imgUrls = data; // Update imgUrl with the image URL
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
   }
 
   startDateValidator = (control: AbstractControl): ValidationErrors | null => {

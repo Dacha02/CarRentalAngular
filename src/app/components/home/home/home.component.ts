@@ -45,6 +45,9 @@ export class HomeComponent implements AfterViewInit, OnInit {
     dataToSend: any = {};
     userId: number = 0;
 
+    imgUrls: any = [];
+
+
     /*cars: ICar[] = [];
     models: IModel[] = [];
     manufacturers: IManufacturer[] = [];*/
@@ -72,10 +75,39 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
         if (!this.hasToken()) {
             const loginMessage = document.getElementById("formSubmitException");
+            let button = document.getElementById("rentCarBtn") as HTMLButtonElement;
+            if (button) {
+                button.disabled = true;
+            }
             if (loginMessage) {
                 loginMessage.innerHTML = "You need to be logged in to rent a car!";
             }
         }
+
+        const apiKey = 'y7ZJohrsKbAX7BfHG4AR3k5clFCknL3cBpz5764zrzsqbpfG6IzAgRVS';
+        const query = 'car'; // Your query for car images
+        const width = 200; // Desired width
+        const height = 200; // Desired height
+
+        fetch(`https://api.pexels.com/v1/search?query=${query}&width=${width}&height=${height}&per_page=55`, {
+            method: 'GET',
+            headers: {
+                'Authorization': apiKey
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.photos && data.photos.length > 0) {
+                    this.imgUrls = data;
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+
+    rndImage(id: number): string{
+        return this.imgUrls.photos[id]?.src?.large || this.imgUrls.photos[0]?.src?.large;
     }
 
     startDateValidator = (control: FormControl): { [key: string]: any } | null => {
@@ -164,65 +196,73 @@ export class HomeComponent implements AfterViewInit, OnInit {
     };
 
     hasToken(): boolean {
-        const token = localStorage.getItem('token');
+        const token  = localStorage.getItem('token');
 
         return !!token;
 
     }
 
+
     submitForm() {
-        if (this.rentForm.valid) {
-            const pickUpLocation = this.rentForm.get('pickUpLocation')?.value;
-            const pickUpDate = this.rentForm.get('pickUpDate')?.value;
-            const dropOffDate = this.rentForm.get('dropOffDate')?.value;
-            const selectedCar = this.rentForm.get('selectedCar')?.value;
-
-            let formSubmitException = document.getElementById("formSubmitException");
-
-            const token = localStorage.getItem('token');
-            if (token) {
-                const decodedToken = this.jwtHelper.decodeToken(token);
-                this.userId = decodedToken.UserId;
-
-                this.dataToSend = {
-                    CarId: selectedCar,
-                    StartDate: pickUpDate,
-                    EndDate: dropOffDate,
-                    RentAdress: pickUpLocation
-                }
-            } else {
-                this.rentForm.invalid;
+        if (!this.hasToken()) {
+            const loginMessage = document.getElementById("formSubmitException");
+            this.rentForm.setErrors({ 'invalid': true });
+            let button = document.getElementById("rentCarBtn") as HTMLButtonElement;
+            if (button) {
+                button.disabled = true;
             }
-            const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+            if (loginMessage) {
+                loginMessage.innerHTML = "You need to be logged in to rent a car!";
+            }
+        }else {
+            if (this.rentForm.valid) {
+                const pickUpLocation = this.rentForm.get('pickUpLocation')?.value;
+                const pickUpDate = this.rentForm.get('pickUpDate')?.value;
+                const dropOffDate = this.rentForm.get('dropOffDate')?.value;
+                const selectedCar = this.rentForm.get('selectedCar')?.value;
 
-            this.rentCarServie.create(this.dataToSend, headers).subscribe({
-                next: (data: any) => {
-                    this.rentForm.reset();
-                    if (formSubmitException) {
-                        formSubmitException.innerHTML = "You successfully rented a car!";
+                let formSubmitException = document.getElementById("formSubmitException");
+
+                const token = localStorage.getItem('token');
+                if (token) {
+                    const decodedToken = this.jwtHelper.decodeToken(token);
+                    this.userId = decodedToken.UserId;
+
+                    this.dataToSend = {
+                        CarId: selectedCar,
+                        StartDate: pickUpDate,
+                        EndDate: dropOffDate,
+                        RentAdress: pickUpLocation
                     }
-                    setTimeout(() => {
-                        if (formSubmitException) {
-                            formSubmitException.classList.remove("text-white");
-                            formSubmitException.innerHTML = "";
-                        }
-                    }, 3000); // Hide the message after 5 seconds
-                },
-                error: (err: any) => {
-                    console.log(err.error.errors[0].error);
-                    if (formSubmitException) {
-                        formSubmitException.innerHTML = err.error.errors[0].error;
-                    }
+                } else {
+                    this.rentForm.invalid;
                 }
-            });
+                const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-            // Handle form submission with valid data
-            // Access the selected car using 'selectedCar' variable
-        } else {
-            // Show error messages or perform any other validation logic
-
+                this.rentCarServie.create(this.dataToSend, headers).subscribe({
+                    next: (data: any) => {
+                        this.rentForm.reset();
+                        if (formSubmitException) {
+                            formSubmitException.innerHTML = "You successfully rented a car!";
+                        }
+                        setTimeout(() => {
+                            if (formSubmitException) {
+                                formSubmitException.classList.remove("text-white");
+                                formSubmitException.innerHTML = "";
+                            }
+                        }, 3000); // Hide the message after 5 seconds
+                    },
+                    error: (err: any) => {
+                        console.log(err.error.errors[0].error);
+                        if (formSubmitException) {
+                            formSubmitException.innerHTML = err.error.errors[0].error;
+                        }
+                    }
+                });
+            }
         }
     }
+
 
 
     ngAfterViewInit(): void {

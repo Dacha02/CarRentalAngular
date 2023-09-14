@@ -34,7 +34,7 @@
                 <label for="pickUpLocation" class="label">Pick-up location</label>
                 <input type="text" class="form-control" id="pickUpLocation" formControlName="pickUpLocation" required>
                 <div *ngIf="rentForm.get('pickUpLocation')?.invalid && (rentForm.get('pickUpLocation')?.dirty || rentForm.get('pickUpLocation')?.touched)">
-                  <div id="pickUpLocationError" class="text-danger">Pick-up location is required.</div>
+                  <div id="pickUpLocationError" class="text-danger font-weight-normal bg-white mt-1 pl-2">Pick-up location is required.</div>
                 </div>
               </div>
 
@@ -44,9 +44,9 @@
                     <label for="pickUpDate" class="label">Pick-up date</label>
                     <input type="date" class="form-control mr-2" id="pickUpDate" formControlName="pickUpDate" required>
                     <div *ngIf="rentForm.get('pickUpDate')?.invalid && (rentForm.get('pickUpDate')?.dirty || rentForm.get('pickUpDate')?.touched)">
-                      <div *ngIf="rentForm.get('pickUpDate')?.errors?.['required']" class="text-danger">Pick-up date is required.</div>
-                      <div *ngIf="rentForm.get('pickUpDate')?.errors?.['startDateInPast']" class="text-danger">Pick-up date cannot be in the past.</div>
-                      <div *ngIf="rentForm.get('pickUpDate')?.errors?.['invalid']" class="text-danger">Pick-up date is invalid.</div>
+                      <div *ngIf="rentForm.get('pickUpDate')?.errors?.['required']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Pick-up date is required.</div>
+                      <div *ngIf="rentForm.get('pickUpDate')?.errors?.['startDateInPast']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Pick-up date cannot be in the past.</div>
+                      <div *ngIf="rentForm.get('pickUpDate')?.errors?.['invalid']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Pick-up date is invalid.</div>
                     </div>
 
                   </div>
@@ -57,10 +57,10 @@
                     <label for="dropOffDate" class="label">Drop-off date</label>
                     <input type="date" class="form-control" id="dropOffDate" formControlName="dropOffDate" required>
                     <div *ngIf="rentForm.get('dropOffDate')?.invalid && (rentForm.get('dropOffDate')?.dirty || rentForm.get('dropOffDate')?.touched)">
-                      <div *ngIf="rentForm.get('dropOffDate')?.errors?.['required']" class="text-danger">Drop-off date is required.</div>
-                      <div *ngIf="rentForm.get('dropOffDate')?.errors?.['endDateLessThanStartDate']" class="text-danger">Drop-off date should be later than pick-up date.</div>
-                      <div *ngIf="rentForm.get('dropOffDate')?.errors?.['endDateInPast']" class="text-danger">Drop-off date cannot be in the past.</div>
-                      <div *ngIf="rentForm.get('dropOffDate')?.errors?.['invalid']" class="text-danger">Drop-off date is invalid.</div>
+                      <div *ngIf="rentForm.get('dropOffDate')?.errors?.['required']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Drop-off date is required.</div>
+                      <div *ngIf="rentForm.get('dropOffDate')?.errors?.['endDateLessThanStartDate']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Drop-off date should be later than pick-up date.</div>
+                      <div *ngIf="rentForm.get('dropOffDate')?.errors?.['endDateInPast']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Drop-off date cannot be in the past.</div>
+                      <div *ngIf="rentForm.get('dropOffDate')?.errors?.['invalid']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Drop-off date is invalid.</div>
                     </div>
                   </div>
                 </div>
@@ -73,12 +73,12 @@
                   <option class="text-dark" *ngFor="let car of cars.data" [value]="car.carId">{{ car.manufacturer + ' ' + car.model }}</option>
                 </select>
                 <div *ngIf="rentForm.get('selectedCar')?.invalid && (rentForm.get('selectedCar')?.dirty || rentForm.get('selectedCar')?.touched)">
-                  <div class="text-danger">Please select a car.</div>
+                  <div class="text-danger font-weight-normal bg-white mt-1 pl-2">Please select a car.</div>
                 </div>
               </div>
 
               <div class="form-group">
-                <button type="submit" [disabled]="!rentForm.valid" class="btn btn-secondary py-3 px-4">Submit</button>
+                <button id="rentCarBtn" type="submit" [disabled]="!rentForm.valid" class="btn btn-secondary py-3 px-4">Submit</button>
                 <div id="formSubmitException" class="text-white text-center font-weight-bold"></div>
               </div>
             </form>
@@ -140,8 +140,8 @@
           <ng-container *ngFor="let car of carsForSlider.data">
             <div class="item">
               <div class="car-wrap rounded ftco-animate">
-                <div class="img rounded d-flex align-items-end" id="car1"
-                     style="background-image: url(assets/templateImages/car-2.jpg);">
+                <div class="img rounded d-flex align-items-end"
+                     style="background-image: url({{rndImage(car.carId)}})">
                 </div>
                 <div class="text">
                   <h2 class="mb-0"><a href="#">{{car.manufacturer}}</a></h2>

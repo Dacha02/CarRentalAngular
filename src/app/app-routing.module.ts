@@ -11,6 +11,7 @@ import {UserRentingsComponent} from "./components/user-rentings/user-rentings.co
 import {LogedOutGuard} from "./guards/loged-out.guard";
 import {RegisterComponent} from "./components/register/register/register.component";
 import {AuthGuard} from "./guards/auth.guard";
+import {JsScriptResolver} from "./components/user-rentings/resolver/js-script.resolver";
 
 const routes: Routes = [
     { path: 'admin', loadChildren: () => import('./admin/admin-routing.module').then(m => m.AdminRoutingModule) },
@@ -18,7 +19,10 @@ const routes: Routes = [
     { path: 'single-car/:id', component: SinglecarComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent, canActivate: [LoginGuardGuard] },
     { path: 'update_profile', component: UserProfileComponent, canActivate: [AuthGuard, LogedOutGuard] },
-    { path: 'user_rents', component: UserRentingsComponent, canActivate: [AuthGuard, LogedOutGuard] },
+    { path: 'user_rents', component: UserRentingsComponent, canActivate: [AuthGuard, LogedOutGuard],
+        /*resolve:{
+            jsScriptResolver: JsScriptResolver
+        }*/ },
     { path: 'register', component: RegisterComponent, canActivate: [LoginGuardGuard] },
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },

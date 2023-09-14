@@ -5,7 +5,7 @@
             <label for="pricePerDay" class="label">Price per day</label>
             <input type="text" class="form-control" id="pricePerDay" formControlName="pricePerDay" required>
             <div *ngIf="addPriceForm.get('pricePerDay')?.invalid && (addPriceForm.get('pricePerDay')?.dirty || addPriceForm.get('pricePerDay')?.touched)">
-                <div id="pricePerDayError" class="text-danger">Price per day is required</div>
+                <div id="pricePerDayError" class="text-danger font-weight-normal bg-white mt-1 pl-2">Price per day is required</div>
             </div>
         </div>
 
@@ -13,7 +13,7 @@
             <label for="pricePerMonth" class="label">Price per month</label>
             <input type="text" class="form-control" id="pricePerMonth" formControlName="pricePerMonth" required>
             <div *ngIf="addPriceForm.get('pricePerMonth')?.invalid && (addPriceForm.get('pricePerMonth')?.dirty || addPriceForm.get('pricePerMonth')?.touched)">
-                <div id="pricePerMonthError" class="text-danger">Price per month is required</div>
+                <div id="pricePerMonthError" class="text-danger font-weight-normal bg-white mt-1 pl-2">Price per month is required</div>
             </div>
         </div>
 
@@ -22,10 +22,10 @@
             <label for="selectedCar" class="label">Select a car</label>
             <select  class="form-control" id="selectedCar" formControlName="selectedCar">
                 <option value="" disabled selected>Select a car</option>
-                <option class="text-dark" *ngFor="let car of cars.data" [value]="car.carId">{{ car.manufacturer }}</option>
+                <option class="text-dark" *ngFor="let car of cars.data" [value]="car.carId">{{ car.manufacturer + ' ' + car.model }}</option>
             </select>
             <div *ngIf="addPriceForm.get('selectedCar')?.invalid && (addPriceForm.get('selectedCar')?.dirty || addPriceForm.get('selectedCar')?.touched)">
-                <div class="text-danger">Please select a car.</div>
+                <div class="text-danger font-weight-normal bg-white mt-1 pl-2">Please select a car.</div>
             </div>
         </div>
 

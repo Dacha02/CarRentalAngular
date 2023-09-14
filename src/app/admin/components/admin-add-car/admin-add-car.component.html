@@ -12,7 +12,7 @@
                 </option>
             </select>
             <div *ngIf="addCarForm.get('selectedMakeModel')?.invalid && (addCarForm.get('selectedMakeModel')?.dirty || addCarForm.get('selectedMakeModel')?.touched)">
-                <div class="text-danger">Please select make and model.</div>
+                <div class="text-danger font-weight-normal bg-white mt-1 pl-2">Please select make and model.</div>
             </div>
         </div>
 
@@ -25,7 +25,7 @@
                 </option>
             </select>
             <div *ngIf="addCarForm.get('selectedCategory')?.invalid && (addCarForm.get('selectedCategory')?.dirty || addCarForm.get('selectedCategory')?.touched)">
-                <div class="text-danger">Please select a category.</div>
+                <div class="text-danger font-weight-normal bg-white mt-1 pl-2">Please select a category.</div>
             </div>
         </div>
 
@@ -38,7 +38,7 @@
                 </option>
             </select>
             <div *ngIf="addCarForm.get('selectedRentPlace')?.invalid && (addCarForm.get('selectedRentPlace')?.dirty || addCarForm.get('selectedRentPlace')?.touched)">
-                <div class="text-danger">Please select a renting place.</div>
+                <div class="text-danger font-weight-normal bg-white mt-1 pl-2">Please select a rent place.</div>
             </div>
         </div>
 
@@ -46,7 +46,7 @@
             <label for="pricePerDay" class="label">Price per day</label>
             <input type="text" class="form-control" id="pricePerDay" formControlName="pricePerDay" required>
             <div *ngIf="addCarForm.get('pricePerDay')?.invalid && (addCarForm.get('pricePerDay')?.dirty || addCarForm.get('pricePerDay')?.touched)">
-                <div id="pricePerDayError" class="text-danger">Price per day is required</div>
+                <div id="pricePerDayError" class="text-danger font-weight-normal bg-white mt-1 pl-2">Price per day is required</div>
             </div>
         </div>
 
@@ -54,7 +54,7 @@
             <label for="pricePerMonth" class="label">Price per month</label>
             <input type="text" class="form-control" id="pricePerMonth" formControlName="pricePerMonth" required>
             <div *ngIf="addCarForm.get('pricePerMonth')?.invalid && (addCarForm.get('pricePerMonth')?.dirty || addCarForm.get('pricePerMonth')?.touched)">
-                <div id="pricePerMonthError" class="text-danger">Price per month is required</div>
+                <div id="pricePerMonthError" class="text-danger font-weight-normal bg-white mt-1 pl-2">Price per month is required</div>
             </div>
         </div>
 
@@ -62,7 +62,7 @@
             <label for="registrationPlate" class="label">Registration plate</label>
             <input type="text" class="form-control" id="registrationPlate" formControlName="registrationPlate" required>
             <div *ngIf="addCarForm.get('registrationPlate')?.invalid && (addCarForm.get('registrationPlate')?.dirty || addCarForm.get('registrationPlate')?.touched)">
-                <div id="registrationPlateError" class="text-danger">Registration plate is required</div>
+                <div id="registrationPlateError" class="text-danger font-weight-normal bg-white mt-1 pl-2">Registration plate is required</div>
             </div>
         </div>
 
@@ -72,9 +72,9 @@
                     <label for="startOfReg" class="label">Start of registration</label>
                     <input type="date" class="form-control mr-2" id="startOfReg" formControlName="startOfReg" required>
                     <div *ngIf="addCarForm.get('startOfReg')?.invalid && (addCarForm.get('startOfReg')?.dirty || addCarForm.get('startOfReg')?.touched)">
-                        <div *ngIf="addCarForm.get('startOfReg')?.errors?.['required']" class="text-danger">Start of registration is required.</div>
-                        <div *ngIf="addCarForm.get('startOfReg')?.errors?.['startDateTooOld']" class="text-danger">Start of registration cannot be older than 6 months.</div>
-                        <div *ngIf="addCarForm.get('startOfReg')?.errors?.['startDateTooFuture']" class="text-danger">Start of registration cannot be greater than 1 month in the future.</div>
+                        <div *ngIf="addCarForm.get('startOfReg')?.errors?.['required']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Start of registration is required.</div>
+                        <div *ngIf="addCarForm.get('startOfReg')?.errors?.['startDateTooOld']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Start of registration cannot be older than 6 months.</div>
+                        <div *ngIf="addCarForm.get('startOfReg')?.errors?.['startDateTooFuture']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Start of registration cannot be greater than 1 month in the future.</div>
                     </div>
                 </div>
             </div>
@@ -101,15 +101,15 @@
             <label for="image" class="label">Image</label>
             <input type="file" class="form-control" id="image" formControlName="image" required (change)="handleImageInput($event)">
             <div *ngIf="addCarForm.get('image')?.invalid && (addCarForm.get('image')?.dirty || addCarForm.get('image')?.touched)">
-                <div *ngIf="addCarForm.get('image')?.errors?.['required']" class="text-danger">Image is required.</div>
-                <div *ngIf="addCarForm.get('image')?.errors?.['pattern']" class="text-danger">Image is not in the correct format.</div>
+                <div *ngIf="addCarForm.get('image')?.errors?.['required']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Image is required.</div>
+                <div *ngIf="addCarForm.get('image')?.errors?.['pattern']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Image is not in the correct format.</div>
             </div>
         </div>
 
 
         <div class="form-group">
             <button type="submit" [disabled]="!addCarForm.valid" class="btn btn-secondary py-3 px-4">Submit</button>
-            <div id="formSubmitException" class="text-white text-center font-weight-bold"></div>
+            <div id="formSubmitException" class="text-white text-center font-weight-normal"></div>
         </div>
     </form>
 </div>

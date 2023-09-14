@@ -7,5 +7,6 @@ export const apis = {
     updateUser: "/user",
     userRentings: "/Rentings/getUserRentings",
     deleteRenting: "/rentings",
-    register: "/register"
+    register: "/register",
+    payRent: "/rentings"
 }

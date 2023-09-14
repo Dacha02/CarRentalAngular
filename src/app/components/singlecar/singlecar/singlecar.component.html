@@ -19,7 +19,8 @@
     <div class="row justify-content-center">
       <div class="col-md-12">
         <div class="car-details">
-          <div class="img rounded" style='background-image: url(assets/templateImages/image_1.jpg);'></div>
+            <div *ngIf="car && imgUrls" class="img rounded" [style.background-image]="'url(' + rndImage(car.carId) + ')'"
+                 style="background-size: cover;"></div>
           <div class="text text-center">
             <span class="subheading">{{car.manufacturer}}</span>
             <h2>{{car.model}}</h2>

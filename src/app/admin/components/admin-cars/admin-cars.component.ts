@@ -1,4 +1,4 @@
-import {Component, Renderer2} from '@angular/core';
+import {Component, Renderer2, ChangeDetectorRef} from '@angular/core';
 import {CarService} from "../../../components/cars/services/cars/car.service";
 import {FormControl, FormGroup} from "@angular/forms";
 import {HttpHeaders} from "@angular/common/http";
@@ -15,7 +15,8 @@ export class AdminCarsComponent {
         private renderer: Renderer2,
         private carServices: CarService,
         private deactivateCarService: DeactivateCarService,
-        private titleService: TitleService
+        private titleService: TitleService,
+        private cdRef: ChangeDetectorRef
     ) {
     }
 
@@ -23,6 +24,7 @@ export class AdminCarsComponent {
     pagesCount: any[] = [];
     keyword: string = '';
     filterForm!: FormGroup;
+    imgUrls: any = [];
 
     ngOnInit(): void {
 
@@ -36,12 +38,43 @@ export class AdminCarsComponent {
             next: (data: any) => {
                 this.cars = data;
                 this.pagesCount = Array.from({length: this.cars.pagesCount}, (_, i) => i + 1);
-                console.log(this.cars);
+                //console.log(this.cars);
             },
             error: (err: any) => {
                 console.log(err);
             }
         });
+
+        const apiKey = 'y7ZJohrsKbAX7BfHG4AR3k5clFCknL3cBpz5764zrzsqbpfG6IzAgRVS';
+        const query = 'car'; // Your query for car images
+        const width = 200; // Desired width
+        const height = 200; // Desired height
+
+
+        fetch(`https://api.pexels.com/v1/search?query=${query}&width=${width}&height=${height}&per_page=55`, {
+            method: 'GET',
+            headers: {
+                'Authorization': apiKey
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.photos && data.photos.length > 0) {
+                    this.imgUrls = data;
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+
+    rndImage(id: number): string {
+        if (this.imgUrls && this.imgUrls.photos && this.imgUrls.photos[id] && this.imgUrls.photos[id].src) {
+            return this.imgUrls.photos[id].src.large;
+        } else {
+            // Handle the case where the properties are not defined or return a default value.
+            return '../../../../assets/templateImages/car-1.jpg';
+        }
     }
 
     goToPage(page: number) {
@@ -82,6 +115,8 @@ export class AdminCarsComponent {
             script.src = '../../../../assets/templateJS/main.js';
             this.renderer.appendChild(document.body, script);
         }, 1000)
+
+
     }
 
     isConfirmationModalVisible: boolean = false; // Flag to control modal visibility
@@ -114,26 +149,6 @@ export class AdminCarsComponent {
         this.hideConfirmationModal();
     }
 
-    // activateUser(user: number) {
-    //     // Call your API here to deactivate the user
-    //     // Use this.userToDeactivate to access the user to deactivate
-    //     const data = {
-    //         id: user
-    //     }
-    //     const token = localStorage.getItem('token');
-    //     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    //
-    //     this.activateUserService.update(data, headers).subscribe({
-    //         next: (data: any) => {
-    //             this.updateUI();
-    //         },
-    //         error: (err: any) => {
-    //             console.log(err);
-    //         },
-    //     });
-    //
-    //     console.log(user);
-    // }
 
 // Function to hide the confirmation modal
     hideConfirmationModal() {

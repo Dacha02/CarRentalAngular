@@ -23,7 +23,7 @@
             <label for="keyword" class="label">Search for a car</label>
             <input type="text" class="form-control" id="keyword" formControlName="keyword" [(ngModel)]="keyword" >
             <div *ngIf="filterForm.get('keyword')?.invalid && (filterForm.get('keyword')?.dirty || filterForm.get('keyword')?.touched)">
-              <div id="keywordError" class="text-danger">Pick-up location is required.</div>
+              <div id="keywordError" class="text-danger font-weight-normal bg-white mt-1 pl-2">Pick-up location is required.</div>
             </div>
           </div>
           <div>
@@ -34,7 +34,7 @@
               <option class="text-dark" value="25"> 25 </option>
             </select>
             <div *ngIf="filterForm.get('perPage')?.invalid && (filterForm.get('perPage')?.dirty || filterForm.get('perPage')?.touched)">
-              <div id="perPageError" class="text-danger">Per page error</div>
+              <div id="perPageError" class="text-danger font-weight-normal bg-white mt-1 pl-2">Per page error</div>
             </div>
           </div>
         </div>
@@ -45,9 +45,9 @@
               <label for="pickUpDate" class="label">Pick-up date</label>
               <input type="date" class="form-control mr-2" id="pickUpDate" formControlName="pickUpDate" required>
               <div *ngIf="filterForm.get('pickUpDate')?.invalid && (filterForm.get('pickUpDate')?.dirty || filterForm.get('pickUpDate')?.touched)">
-                <div *ngIf="filterForm.get('pickUpDate')?.errors?.['required']" class="text-danger">Pick-up date is required.</div>
-                <div *ngIf="filterForm.get('pickUpDate')?.errors?.['startDateInPast']" class="text-danger">Pick-up date cannot be in the past.</div>
-                <div *ngIf="filterForm.get('pickUpDate')?.errors?.['invalid']" class="text-danger">Pick-up date is invalid.</div>
+                <div *ngIf="filterForm.get('pickUpDate')?.errors?.['required']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Pick-up date is required.</div>
+                <div *ngIf="filterForm.get('pickUpDate')?.errors?.['startDateInPast']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Pick-up date cannot be in the past.</div>
+                <div *ngIf="filterForm.get('pickUpDate')?.errors?.['invalid']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Pick-up date is invalid.</div>
               </div>
 
             </div>
@@ -58,10 +58,10 @@
               <label for="dropOffDate" class="label">Drop-off date</label>
               <input type="date" class="form-control" id="dropOffDate" formControlName="dropOffDate" required>
               <div *ngIf="filterForm.get('dropOffDate')?.invalid && (filterForm.get('dropOffDate')?.dirty || filterForm.get('dropOffDate')?.touched)">
-                <div *ngIf="filterForm.get('dropOffDate')?.errors?.['required']" class="text-danger">Drop-off date is required.</div>
-                <div *ngIf="filterForm.get('dropOffDate')?.errors?.['endDateLessThanStartDate']" class="text-danger">Drop-off date should be later than pick-up date.</div>
-                <div *ngIf="filterForm.get('dropOffDate')?.errors?.['endDateInPast']" class="text-danger">Drop-off date cannot be in the past.</div>
-                <div *ngIf="filterForm.get('dropOffDate')?.errors?.['invalid']" class="text-danger">Drop-off date is invalid.</div>
+                <div *ngIf="filterForm.get('dropOffDate')?.errors?.['required']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Drop-off date is required.</div>
+                <div *ngIf="filterForm.get('dropOffDate')?.errors?.['endDateLessThanStartDate']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Drop-off date should be later than pick-up date.</div>
+                <div *ngIf="filterForm.get('dropOffDate')?.errors?.['endDateInPast']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Drop-off date cannot be in the past.</div>
+                <div *ngIf="filterForm.get('dropOffDate')?.errors?.['invalid']" class="text-danger font-weight-normal bg-white mt-1 pl-2">Drop-off date is invalid.</div>
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@
   <div class="container">
     <div class="row">
       <ng-container *ngFor="let car of cars.data">
-        <app-car-card class="col-md-4" [carImage]="car.ImagePath" [carModel]="car.model" [carManufacturer]="car.manufacturer"
+        <app-car-card class="col-md-4" [carImage]="imgUrls" [carModel]="car.model" [carManufacturer]="car.manufacturer"
                       [pricePerDay]="car.pricePerDay" [carCategory]="car.carCategory" [carId]="car.carId"></app-car-card>
       </ng-container>
     </div>
