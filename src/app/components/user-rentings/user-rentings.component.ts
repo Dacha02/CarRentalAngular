@@ -15,9 +15,7 @@ import {TitleService} from "../../shared/services/title/title.service";
 import {FormControl, FormGroup, FormsModule, Validators} from "@angular/forms";
 import {JwtHelperService} from "@auth0/angular-jwt";
 import {GetUserService} from "../../shared/services/getUserService/get-user.service";
-import {combineAll} from "rxjs";
 import {PayService} from "./services/payService/pay.service";
-import {ActivatedRoute} from "@angular/router";
 
 @Component({
     selector: 'app-user-rentings',
@@ -35,10 +33,10 @@ export class UserRentingsComponent implements OnInit, AfterViewInit {
         private cdr: ChangeDetectorRef,
         private jwtHelper: JwtHelperService,
         private getUserService: GetUserService,
-        private payService: PayService,
-        private renderer: Renderer2,
-        private el: ElementRef
-    ) { }
+        private payService: PayService
+    ) {
+
+    }
 
     paymentForm!: FormGroup;
     isPaymentModalVisible = false;
@@ -60,8 +58,8 @@ export class UserRentingsComponent implements OnInit, AfterViewInit {
             name: new FormControl('', [Validators.required, Validators.pattern(/^[A-Z][a-z]* [A-Z][a-z]*$/)]),
             cardNumber: new FormControl('', [Validators.required]),
             expirationDate: new FormControl('', [
-                Validators.required
-               /* Validators.pattern(/^(0[1-9]|1[0-2])\/(2[3-9]|3[0-9]|4[0-9]|5[0-9])$/)*/
+                Validators.required,
+                Validators.pattern(/^(0[1-9]|1[0-2])\/(2[3-9]|3[0-9]|4[0-9]|5[0-9])$/)
             ]),
             securityCode: new FormControl('', [Validators.required, Validators.pattern(/^(100|[1-9]\d{2,3}|9999)$/)]),
         });
@@ -80,31 +78,55 @@ export class UserRentingsComponent implements OnInit, AfterViewInit {
         );
     }
 
+    markInputDirty() {
+        this.paymentForm.get('cardNumber')?.markAsDirty();
+    }
+
     ngAfterViewInit(): void {
         this.loadScripts();
     }
 
-    private loadScripts() {
-        // Load the Imask script
-        const imaskScript = document.createElement('script');
-        imaskScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js';
-        imaskScript.type = 'text/javascript';
-        imaskScript.async = true;
-        imaskScript.onload = () => {
-            // Imask script has loaded, you can now use its functionality
-        };
-        document.head.appendChild(imaskScript);
-
-        // Load the credit card.js script
-        const creditCardScript = document.createElement('script');
-        creditCardScript.src = '../../../assets/templateJS/creditCard.js'; // Adjust the path accordingly
-        creditCardScript.type = 'text/javascript';
-        creditCardScript.async = true;
-        creditCardScript.onload = () => {
-            // creditCard.js script has loaded, you can now use its functionality
-        };
-        document.head.appendChild(creditCardScript);
+    private loadScript(scriptSrc: string): Promise<void> {
+        return new Promise<void>((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = scriptSrc;
+            script.type = 'text/javascript';
+            script.async = true;
+            script.onload = () => {
+                resolve();
+            };
+            script.onerror = (error) => {
+                reject(error);
+            };
+            document.head.appendChild(script);
+        });
     }
+
+    private async loadScripts() {
+        try {
+            // Load the Imask script
+            await this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js');
+
+            // Load the creditCard.js script
+            await this.loadScript('../../../assets/templateJS/creditCard.js'); // Adjust the path accordingly
+
+            // Both scripts have loaded, you can now use their functionality
+
+            // @ts-ignore
+            window.ucitajCreditCardJs();
+        } catch (error) {
+            console.error('Error loading script:', error);
+        }
+    }
+
+    setCardNumberValueAndValidity(value: string) {
+        const cardNumberControl = this.paymentForm.get('cardNumber');
+        if(cardNumberControl){
+            cardNumberControl.setValue(value);
+            cardNumberControl.updateValueAndValidity();
+        }
+    }
+
 
     isConfirmationModalVisible: boolean = false; // Flag to control modal visibility
     rentToDeactivate: any;
@@ -123,8 +145,9 @@ export class UserRentingsComponent implements OnInit, AfterViewInit {
     confirmDeactivate() {
         // Call your API here to deactivate the user
         // Use this.userToDeactivate to access the user to deactivate
-
-        this.deleteRentingService.delete(this.rentToDeactivate.id).subscribe({
+        const token = localStorage.getItem('token');
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+        this.deleteRentingService.delete(this.rentToDeactivate.id, headers).subscribe({
             next: (data: any) => {
                 console.log("success");
                 this.showDeleteSuccessModal();
@@ -219,25 +242,6 @@ export class UserRentingsComponent implements OnInit, AfterViewInit {
         }
 
 
-       /* this.getUserService.get(this.userId, headers).subscribe({
-            next: (data: any) => {
-
-                // Reset payment form fields
-                this.paymentForm.reset({
-                    firstName: data.firstName,
-                    lastName: data.lastName,
-                    cardNumber: '',
-                    expirationDate: '',
-                    cardholderName: ''
-                });
-
-                console.log(data);
-            },
-            error: (err: any) => {
-                console.log(err);
-            }
-        });*/
-
         this.cdr.detectChanges();
 
         // Show the payment modal
@@ -261,8 +265,9 @@ export class UserRentingsComponent implements OnInit, AfterViewInit {
             let rentId = {
                 "id": this.rentToPay.id
             }
-
-            this.payService.update(rentId).subscribe({
+            const token = localStorage.getItem('token');
+            const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+            this.payService.update(rentId, headers).subscribe({
                 next: (data: any) => {
                     console.log("success");
                     //this.showDeleteSuccessModal();

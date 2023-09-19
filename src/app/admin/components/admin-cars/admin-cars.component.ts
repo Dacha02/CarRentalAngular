@@ -135,7 +135,9 @@ export class AdminCarsComponent {
     confirmDeactivate() {
         // Call your API here to deactivate the user
         // Use this.userToDeactivate to access the user to deactivate
-        this.deactivateCarService.delete(this.carToDeactivate.carId).subscribe({
+        const token = localStorage.getItem('token');
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+        this.deactivateCarService.delete(this.carToDeactivate.carId, headers).subscribe({
             next: (data: any) => {
                 //this.updateUI();
                 console.log("success")

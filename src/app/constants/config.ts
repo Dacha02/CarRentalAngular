@@ -1,3 +1,3 @@
 export const config = {
-    SERVER: "http://localhost:5000/api"
+    SERVER: "http://192.168.10.10:5000/api"
 }

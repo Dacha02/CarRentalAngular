@@ -63,7 +63,9 @@ export class AdminHomeComponent implements OnInit, AfterViewInit {
     monthlyEarning: number = 0;
 
     loadDataAndInitializeChart(): void {
-        this.profitsService.getAll('', '', '', undefined, undefined, undefined).subscribe({
+        const token = localStorage.getItem('token');
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+        this.profitsService.getAll('', '', '', headers, undefined, undefined).subscribe({
             next: (data: any) => {
                 this.profitsArray = data.byMonth;
 
@@ -92,7 +94,9 @@ export class AdminHomeComponent implements OnInit, AfterViewInit {
 
 
     loadUsersData(page: number) {
-        this.userService.getAll('', '', '', undefined, undefined, page).subscribe({
+        const token = localStorage.getItem('token');
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+        this.userService.getAll('', '', '', headers, undefined, page).subscribe({
             next: (data: any) => {
                 this.usersPaginationData.data = data;
                 this.usersPaginationData.pagesCount = Array.from(
@@ -202,7 +206,9 @@ export class AdminHomeComponent implements OnInit, AfterViewInit {
     confirmDeactivate() {
         // Call your API here to deactivate the user
         // Use this.userToDeactivate to access the user to deactivate
-        this.deactivateUserService.delete(this.userToDeactivate.id).subscribe({
+        const token = localStorage.getItem('token');
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+        this.deactivateUserService.delete(this.userToDeactivate.id, headers).subscribe({
             next: (data: any) => {
                 this.updateUI();
             },

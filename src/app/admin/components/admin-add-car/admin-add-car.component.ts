@@ -60,7 +60,9 @@ export class AdminAddCarComponent implements OnInit {
             image: new FormControl(null, [Validators.required]),
         });
 
-        this.carDetailsService.getAll().subscribe({
+        const token = localStorage.getItem('token');
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+        this.carDetailsService.getAll('','','', headers).subscribe({
             next: (data: any) => {
                 this.carDetails = data;
                 this.groupedSpecifications = this.groupSpecifications(data.specifications);
@@ -92,7 +94,9 @@ export class AdminAddCarComponent implements OnInit {
 
     fetchCarDetails(id: number): void {
         // Make an API request to fetch car details based on the id
-        this.singleCarDetailsService.get(id).subscribe({
+        const token = localStorage.getItem('token');
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+        this.singleCarDetailsService.get(id, headers).subscribe({
             next: (data: any) => {
 
                 const startOfRegistration = new Date(data.startOfRegistration);
@@ -259,7 +263,6 @@ export class AdminAddCarComponent implements OnInit {
             const token = localStorage.getItem('token');
             const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
             let formSubmitException = document.getElementById("formSubmitException");
-
 
             this.route.params.subscribe(params => {
                 const id = params['id'];

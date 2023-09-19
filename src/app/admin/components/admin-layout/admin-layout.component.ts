@@ -1,6 +1,7 @@
 import {Component, AfterViewInit, Renderer2} from '@angular/core';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {GetUserService} from "../../../shared/services/getUserService/get-user.service";
+import {HttpHeaders} from "@angular/common/http";
 
 
 @Component({
@@ -27,7 +28,8 @@ export class AdminLayoutComponent implements AfterViewInit {
             const decodedToken = this.jwtHelper.decodeToken(token);
             this.userId = decodedToken.UserId;
 
-            this.getUserService.get(this.userId).subscribe({
+            const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+            this.getUserService.get(this.userId, headers).subscribe({
                 next: (data: any) => {
                     this.userName = data.userName;
                     console.log(data);

@@ -57,7 +57,7 @@ export class ApiService {
         return this.http.put(config.SERVER + this.path, dataToSend, {headers});
     }
 
-    delete(id: number | string): Observable<any> {
-        return this.http.delete(config.SERVER + this.path + "/" + id);
+    delete(id: number | string, headers?: HttpHeaders): Observable<any> {
+        return this.http.delete(config.SERVER + this.path + "/" + id, {headers});
     }
 }

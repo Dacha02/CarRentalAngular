@@ -106,8 +106,13 @@ export class HomeComponent implements AfterViewInit, OnInit {
             });
     }
 
-    rndImage(id: number): string{
-        return this.imgUrls.photos[id]?.src?.large || this.imgUrls.photos[0]?.src?.large;
+    rndImage(id: number): string {
+        if (this.imgUrls && this.imgUrls.photos && this.imgUrls.photos[id] && this.imgUrls.photos[id].src) {
+            return this.imgUrls.photos[id].src.large;
+        } else {
+            // Handle the case where the properties are not defined or return a default value.
+            return '../../../../assets/templateImages/car-1.jpg';
+        }
     }
 
     startDateValidator = (control: FormControl): { [key: string]: any } | null => {

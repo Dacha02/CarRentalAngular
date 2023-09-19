@@ -11,7 +11,6 @@ import {UserRentingsComponent} from "./components/user-rentings/user-rentings.co
 import {LogedOutGuard} from "./guards/loged-out.guard";
 import {RegisterComponent} from "./components/register/register/register.component";
 import {AuthGuard} from "./guards/auth.guard";
-import {JsScriptResolver} from "./components/user-rentings/resolver/js-script.resolver";
 
 const routes: Routes = [
     { path: 'admin', loadChildren: () => import('./admin/admin-routing.module').then(m => m.AdminRoutingModule) },

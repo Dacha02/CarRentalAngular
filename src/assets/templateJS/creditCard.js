@@ -1,4 +1,4 @@
-window.onload = function () {
+window.ucitajCreditCardJs = function () {
 
     const name = document.getElementById('name');
     const cardnumber = document.getElementById('cardnumber');
@@ -196,7 +196,6 @@ window.onload = function () {
     });
 
 
-
 //Generate random card number from list of known test numbers
     const randomCard = function () {
         let testCards = [
@@ -211,6 +210,7 @@ window.onload = function () {
         ];
         let randomNumber = Math.floor(Math.random() * testCards.length);
         cardnumber_mask.unmaskedValue = testCards[randomNumber];
+
     }
     generatecard.addEventListener('click', function () {
         randomCard();

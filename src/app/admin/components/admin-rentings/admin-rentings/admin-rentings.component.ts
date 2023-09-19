@@ -24,7 +24,9 @@ export class AdminRentingsComponent implements OnInit {
     }
 
     loadRentingsData(page: number) {
-        this.renitngsService.getAll('', '', '', undefined, 25, page).subscribe({
+        const token = localStorage.getItem('token');
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+        this.renitngsService.getAll('', '', '', headers, 25, page).subscribe({
             next: (data: any) => {
                 this.rentingsPaginationData.data = data;
                 this.rentingsPaginationData.pagesCount = Array.from(

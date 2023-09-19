@@ -92,7 +92,9 @@ export class UserProfileComponent implements AfterViewInit, OnInit {
             formData.append('Phone', this.userPhone);
 
             let formSubmitException = document.getElementById("formSubmitException");
-            this.updateUserService.update(formData).subscribe({
+            const token = localStorage.getItem('token');
+            const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+            this.updateUserService.update(formData, headers).subscribe({
                 next: (data: any) => {
                     console.log('Uspenso');
                     if (formSubmitException) {
